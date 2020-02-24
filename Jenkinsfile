@@ -12,17 +12,17 @@ stages {
             sh "mvn clean test"
         }
     }
-    stage ('Packaging') {
+    stage('Packaging') {
         steps {
-            sh "mvn package"
+            sh "mvn package -Dskiptests=true "
         }
-    }
-    post {
-        success {
-            echo "Inside Packaging stage - Success"
-        }
-        always {
+        post {
+            success {
+                echo "Inside Packaging stage - Success"
+            }
+            always {
             echo "Inside Packaging stage - Always"
+            }
         }
     }
 }
