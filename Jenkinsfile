@@ -7,7 +7,7 @@ pipeline {
         maven 'maven363'
 }
 stages {
-    stage('Build'){
+    stage('Test') {
         steps {
             sh "mvn clean test"
         }
