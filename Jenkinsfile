@@ -12,6 +12,19 @@ stages {
             sh "mvn clean test"
         }
     }
+    stage ('Packaging') {
+        steps {
+            sh "mvn package"
+        }
+    }
+    post {
+        success {
+            echo "Inside Packaging stage - Success"
+        }
+        always {
+            echo "Inside Packaging stage - Always"
+        }
+    }
 }
 post {
     success {
