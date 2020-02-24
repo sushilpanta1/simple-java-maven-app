@@ -8,8 +8,8 @@ pipeline {
 }
 stages {
     stage('Build'){
-        steps{
-            sh "mvn clean test" //whats up
+        steps {
+            sh "mvn clean test"
         }
     }
 }
